@@ -22,9 +22,6 @@ class Name(Field):
     ...
 
 class Birthday(Field):
-    def __init__(self, value):
-        self.value = value
-    
     @property
     def birthday(self):
         return self.value
@@ -34,10 +31,7 @@ class Birthday(Field):
         if new_value:
             self.value = date.fromisoformat(new_value)
 
-class Phone(Field):
-    def __init__(self, value:str):
-        self._value = value
-        
+class Phone(Field):   
     @property
     def value(self):
         return self._value
